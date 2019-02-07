@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+//Algorithm for gradient descent, in C++
+//There are two ways to control the loop:
+//One: By fixed number of iterations.
+//Two: Increase learning rate and set condition to x2-x1>=0.0000001
+int main() {
+	//Function is x^2 say. Gradient is 2*x and we start at x=5
+	double learn_rate=0.1;
+	int counter=0;
+	double x1=5,x2=5;
+	do{
+		x1=x2;
+		x2=x1-learn_rate*2*x1;
+		counter++;
+	}while(counter<=50);
+	printf("The minima occurs at:%f",x2);
+	return 0;
+}
