@@ -1,0 +1,41 @@
+/* Some comments: Linear regression seems unsuitable for small amounts of data.
+   But it gives very accurate results on feeding large amount of data. */
+
+
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+//Algorithm for gradient descent.
+
+int main() {
+	//Function is x^2 say. Gradient is 2*x and we start at x=5
+    int n;
+    printf("Enter the number of data entries you have:\n");
+    scanf("%d",&n);
+    double arr[n][n];
+    printf("Enter x and y values:\n");
+    for(int i=0;i<n;i++){
+    	scanf("%lf %lf",&arr[i][0],&arr[i][1]);
+    	i++;
+    }
+    double m=0;
+    double c=0;
+    double learnrate=0.01;
+    int epoch=1;
+
+    for(int i=1;i<=epoch;i++){
+        for(int j=0;j<n;j++){
+            double temp=m*arr[j][0]+c;
+            double err= temp-arr[j][1];
+            //Updating m....
+            m=m-learnrate*arr[j][0]*err;
+            //Updating c....
+            c=c-learnrate*err;
+            printf("%lf %lf %lf\n",m,c,err);
+
+        }
+    }
+
+
+	return 0;
+}
