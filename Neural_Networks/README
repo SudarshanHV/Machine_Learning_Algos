@@ -1,0 +1,7 @@
+This is the Read Me FILE:
+NOTES:
+Clone the folder directly to your local system.
+Install python, other relevant packages (numpy)
+This code uses the MNIST dataset for handwritten digits.
+This code is inspired from the Nielsen's Chapter 1 code, so credits to the author!!
+I have added a few of my own comments and debugging statements for more better user experience.
